@@ -1,102 +1,28 @@
 {
-  "name": "mcp-standard-sdk",
-  "version": "0.1.0",
-  "description": "A comprehensive SDK for building MCP Servers, AI Agents, and RAG Models",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./server": {
-      "import": "./dist/server/index.esm.js",
-      "require": "./dist/server/index.js",
-      "types": "./dist/server/index.d.ts"
-    },
-    "./agent": {
-      "import": "./dist/agent/index.esm.js",
-      "require": "./dist/agent/index.js",
-      "types": "./dist/agent/index.d.ts"
-    },
-    "./rag": {
-      "import": "./dist/rag/index.esm.js",
-      "require": "./dist/rag/index.js",
-      "types": "./dist/rag/index.d.ts"
-    }
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
+  "name": "diffusion-ai",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "build": "rollup -c",
-    "build:watch": "rollup -c -w",
-    "dev": "rollup -c -w",
-    "test": "vitest",
-    "test:watch": "vitest --watch",
-    "test:coverage": "vitest --coverage",
-    "lint": "eslint src --ext .ts,.tsx",
-    "lint:fix": "eslint src --ext .ts,.tsx --fix",
-    "format": "prettier --write \"src/**/*.{ts,tsx,json,md}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,tsx,json,md}\"",
-    "typecheck": "tsc --noEmit",
-    "clean": "rimraf dist",
-    "prepublishOnly": "npm run clean && npm run build",
-    "docs:build": "typedoc",
-    "docs:serve": "typedoc --watch"
+    "dev": "nodemon src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "mcp",
-    "server",
-    "ai",
-    "agent",
-    "rag",
-    "sdk",
-    "typescript",
-    "machine-learning",
-    "natural-language-processing"
-  ],
-  "author": "Your Name <your.email@example.com>",
-  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/mcp-standard-sdk.git"
+    "url": "git+https://github.com/SiddharthManjul/Diffusion-AI.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/yourusername/mcp-standard-sdk/issues"
+    "url": "https://github.com/SiddharthManjul/Diffusion-AI/issues"
   },
-  "homepage": "https://github.com/yourusername/mcp-standard-sdk#readme",
+  "homepage": "https://github.com/SiddharthManjul/Diffusion-AI#readme",
+  "description": "",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^11.1.5",
-    "@types/node": "^20.10.5",
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0",
-    "@vitest/coverage-v8": "^1.1.0",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
-    "prettier": "^3.1.1",
-    "rimraf": "^5.0.5",
-    "rollup": "^4.9.2",
-    "rollup-plugin-dts": "^6.1.0",
-    "tslib": "^2.6.2",
-    "typedoc": "^0.25.6",
-    "typescript": "^5.3.3",
-    "vitest": "^1.1.0"
-  },
-  "dependencies": {
-    "zod": "^3.22.4"
-  },
-  "peerDependencies": {
-    "typescript": ">=4.9.0"
-  },
-  "engines": {
-    "node": ">=16.0.0"
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.2"
   }
 }
