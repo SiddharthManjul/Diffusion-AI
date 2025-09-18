@@ -5,8 +5,8 @@ import { SystemMessage, HumanMessage, AIMessage } from "@langchain/core/messages
 // Initialize the language model
 export const initializeOpenaiModel = () => {
   return new ChatOpenAI({
-    modelName: "gpt-3.5-turbo",
-    temperature: 0.7,
+    model: "gpt-4o-mini",
+    temperature: 0,
   });
 };
 
