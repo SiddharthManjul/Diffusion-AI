@@ -20,6 +20,7 @@
   "homepage": "https://github.com/SiddharthManjul/Diffusion-AI#readme",
   "description": "",
   "devDependencies": {
+    "@types/readline-sync": "^1.4.8",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
@@ -30,7 +31,9 @@
     "@langchain/core": "^0.3.76",
     "@langchain/google-genai": "^0.2.18",
     "@langchain/openai": "^0.6.12",
+    "axios": "^1.12.2",
     "dotenv": "^17.2.2",
-    "langchain": "^0.3.34"
+    "langchain": "^0.3.34",
+    "readline-sync": "^1.4.10"
   }
 }

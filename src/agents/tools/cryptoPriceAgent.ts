@@ -1,0 +1,69 @@
+import { DataFetchingToolConfig } from '../../agentConfig/toolConfig/schemas';
+
+export const cryptoPriceAgentConfig: DataFetchingToolConfig = {
+  id: 'crypto-price-agent',
+  name: 'Cryptocurrency Price Agent',
+  description: 'Fetches real-time cryptocurrency prices and market data from CoinMarketCap API',
+  version: '1.0.0',
+  provider: {
+    name: 'CoinMarketCap',
+    baseUrl: 'https://pro-api.coinmarketcap.com/v1',
+    requiresAuth: true,
+    authType: 'api_key',
+    authHeader: 'X-CMC_PRO_API_KEY',
+    rateLimit: {
+      requestsPerMinute: 30,
+      requestsPerHour: 500
+    }
+  },
+  endpoints: [
+    {
+      path: '/cryptocurrency/quotes/latest',
+      method: 'GET',
+      parameters: {
+        required: ['symbol'],
+        optional: ['convert', 'aux']
+      },
+      responseFormat: 'json',
+      description: 'Get latest cryptocurrency quotes by symbol'
+    },
+    {
+      path: '/cryptocurrency/listings/latest',
+      method: 'GET',
+      parameters: {
+        optional: ['start', 'limit', 'convert', 'sort']
+      },
+      responseFormat: 'json',
+      description: 'Get latest cryptocurrency listings'
+    }
+  ],
+  outputFormat: {
+    type: 'structured',
+    schema: {
+      type: 'object',
+      properties: {
+        symbol: { type: 'string' },
+        name: { type: 'string' },
+        price: { type: 'number' },
+        change_24h: { type: 'number' },
+        market_cap: { type: 'number' },
+        volume_24h: { type: 'number' }
+      }
+    }
+  },
+  examples: [
+    {
+      input: { symbol: 'BTC', convert: 'USD' },
+      output: {
+        symbol: 'BTC',
+        name: 'Bitcoin',
+        price: 45000.25,
+        change_24h: 2.5,
+        market_cap: 850000000000,
+        volume_24h: 25000000000
+      }
+    }
+  ],
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString()
+};

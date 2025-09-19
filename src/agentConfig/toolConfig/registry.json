@@ -1,0 +1,47 @@
+{
+  "tools": [
+    {
+      "id": "crypto-price-agent",
+      "name": "Cryptocurrency Price Agent",
+      "type": "data_fetching",
+      "status": "active",
+      "configPath": "dataFetching/crypto-price-agent.json",
+      "version": "1.0.0",
+      "registeredAt": "2025-09-19T18:23:43.316Z",
+      "usageCount": 0
+    },
+    {
+      "id": "weather-agent",
+      "name": "Weather Information Agent",
+      "type": "data_fetching",
+      "status": "active",
+      "configPath": "dataFetching/weather-agent.json",
+      "version": "1.0.0",
+      "registeredAt": "2025-09-19T18:23:43.316Z",
+      "usageCount": 0
+    },
+    {
+      "id": "email-summarizer-agent",
+      "name": "Email Thread Summarizer Agent",
+      "type": "automation",
+      "status": "active",
+      "configPath": "automation/email-summarizer-agent.json",
+      "version": "1.0.0",
+      "registeredAt": "2025-09-19T18:23:43.317Z",
+      "usageCount": 1,
+      "lastUsed": "2025-09-19T18:35:36.752Z"
+    },
+    {
+      "id": "document-analyzer-agent",
+      "name": "Document Analysis Agent",
+      "type": "automation",
+      "status": "active",
+      "configPath": "automation/document-analyzer-agent.json",
+      "version": "1.0.0",
+      "registeredAt": "2025-09-19T18:23:43.317Z",
+      "usageCount": 0
+    }
+  ],
+  "lastUpdated": "2025-09-19T18:35:36.752Z",
+  "version": "1.0.0"
+}

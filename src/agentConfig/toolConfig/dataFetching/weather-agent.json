@@ -1,0 +1,94 @@
+{
+  "id": "weather-agent",
+  "name": "Weather Information Agent",
+  "description": "Fetches current weather and forecast data from OpenWeatherMap API",
+  "version": "1.0.0",
+  "provider": {
+    "name": "OpenWeatherMap",
+    "baseUrl": "https://api.openweathermap.org/data/2.5",
+    "requiresAuth": true,
+    "authType": "api_key",
+    "authHeader": "appid",
+    "rateLimit": {
+      "requestsPerMinute": 60,
+      "requestsPerHour": 1000
+    }
+  },
+  "endpoints": [
+    {
+      "path": "/weather",
+      "method": "GET",
+      "parameters": {
+        "required": [
+          "q"
+        ],
+        "optional": [
+          "units",
+          "lang"
+        ]
+      },
+      "responseFormat": "json",
+      "description": "Get current weather data for a city"
+    },
+    {
+      "path": "/forecast",
+      "method": "GET",
+      "parameters": {
+        "required": [
+          "q"
+        ],
+        "optional": [
+          "units",
+          "lang",
+          "cnt"
+        ]
+      },
+      "responseFormat": "json",
+      "description": "Get weather forecast for a city"
+    }
+  ],
+  "outputFormat": {
+    "type": "structured",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "temperature": {
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        },
+        "humidity": {
+          "type": "number"
+        },
+        "pressure": {
+          "type": "number"
+        },
+        "wind_speed": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "q": "London",
+        "units": "metric"
+      },
+      "output": {
+        "city": "London",
+        "temperature": 15.5,
+        "description": "partly cloudy",
+        "humidity": 65,
+        "pressure": 1013,
+        "wind_speed": 3.2
+      }
+    }
+  ],
+  "createdAt": "2025-09-19T18:23:43.311Z",
+  "updatedAt": "2025-09-19T18:23:43.311Z"
+}
